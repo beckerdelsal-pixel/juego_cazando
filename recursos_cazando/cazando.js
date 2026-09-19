@@ -15,6 +15,8 @@ const ANCHO_COMIDA=20;
 let puntaje = 0;
 let vidas = 3;
 
+let tiempo = 10;
+
 function graficarGato() {
 
     graficarRectangulo(gatoX, gatoY, ANCHO_GATO, ALTO_GATO, "orange");
@@ -32,7 +34,7 @@ function iniciarJuego() {
     comidaY = canvas.height-20;
     graficarGato();
     graficarComida();
-    
+    setInterval(restarTiempo, 1000);
 }
 
 function graficarRectangulo(x, y, ancho, alto, color) {
@@ -102,4 +104,9 @@ function actualizarJuego() {
     graficarComida();
     detectarColision();
     
+}
+
+function restarTiempo() {
+    tiempo = tiempo - 1;
+    mostrarEnSpan("tiempo", tiempo);
 }
