@@ -12,6 +12,9 @@ const ANCHO_GATO=40;
 const ALTO_COMIDA=20;
 const ANCHO_COMIDA=20;
 
+let puntaje = 0;
+let vidas = 3;
+
 function graficarGato() {
 
     graficarRectangulo(gatoX, gatoY, ANCHO_GATO, ALTO_GATO, "orange");
@@ -29,6 +32,7 @@ function iniciarJuego() {
     comidaY = canvas.height-20;
     graficarGato();
     graficarComida();
+    
 }
 
 function graficarRectangulo(x, y, ancho, alto, color) {
@@ -38,6 +42,7 @@ function graficarRectangulo(x, y, ancho, alto, color) {
 
 function limpiarCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
 }
 
 function moverIzquierda() {
@@ -78,6 +83,23 @@ function detectarColision(){
         && gatoY+ALTO_GATO > comidaY 
         && gatoY < comidaY+ALTO_COMIDA){
         alert("Has atrapado la comida!!!!!");
+        aparecerComida();
+        puntaje = puntaje + 1;
+        mostrarEnSpan("puntos", puntaje);
         
     }
+}
+
+function aparecerComida() {
+    comidaX = generarAleatorio(0, canvas.width - ANCHO_COMIDA);
+    comidaY = generarAleatorio(0, canvas.height - ALTO_COMIDA);
+    actualizarJuego();
+}
+
+function actualizarJuego() {
+    limpiarCanvas();
+    graficarGato();
+    graficarComida();
+    detectarColision();
+    
 }
