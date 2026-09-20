@@ -2,20 +2,22 @@
 let canvas = document.getElementById("areaJuego");
 let ctx = canvas.getContext("2d");
 
-let gatoX =0;
-let gatoY =0;
-let comidaX=0;
-let comidaY=0;
+let gatoX = 0;
+let gatoY = 0;
+let comidaX = 0;
+let comidaY = 0;
 
-const ALTO_GATO=60;
-const ANCHO_GATO=40;
-const ALTO_COMIDA=20;
-const ANCHO_COMIDA=20;
+const ALTO_GATO = 60;
+const ANCHO_GATO = 40;
+const ALTO_COMIDA = 20;
+const ANCHO_COMIDA = 20;
 
 let puntaje = 0;
-let vidas = 3;
+
 
 let tiempo = 10;
+
+let intervalo;
 
 function graficarGato() {
 
@@ -28,13 +30,13 @@ function graficarComida() {
 }
 
 function iniciarJuego() {
-    gatoX= canvas.width/2;
-    gatoY= canvas.height/2;
-    comidaX = canvas.width-20;
-    comidaY = canvas.height-20;
+    gatoX = canvas.width / 2;
+    gatoY = canvas.height / 2;
+    comidaX = canvas.width - 20;
+    comidaY = canvas.height - 20;
     graficarGato();
     graficarComida();
-    setInterval(restarTiempo, 1000);
+    intervalo = setInterval(restarTiempo, 1000);
 }
 
 function graficarRectangulo(x, y, ancho, alto, color) {
@@ -44,7 +46,7 @@ function graficarRectangulo(x, y, ancho, alto, color) {
 
 function limpiarCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
+
 }
 
 function moverIzquierda() {
@@ -79,16 +81,21 @@ function moverAbajo() {
     detectarColision();
 }
 
-function detectarColision(){
-    if(gatoX+ANCHO_GATO > comidaX 
-        && gatoX < comidaX+ANCHO_COMIDA 
-        && gatoY+ALTO_GATO > comidaY 
-        && gatoY < comidaY+ALTO_COMIDA){
-        alert("Has atrapado la comida!!!!!");
+function detectarColision() {
+    if (gatoX + ANCHO_GATO > comidaX
+        && gatoX < comidaX + ANCHO_COMIDA
+        && gatoY + ALTO_GATO > comidaY
+        && gatoY < comidaY + ALTO_COMIDA) {
+        //alert("Has atrapado la comida!!!!!");
         aparecerComida();
         puntaje = puntaje + 1;
         mostrarEnSpan("puntos", puntaje);
-        
+
+        if (puntaje == 6 && tiempo > 0) {
+            alert("¡Felicidades! Has ganado el juego.");
+            clearInterval(intervalo);
+        }
+
     }
 }
 
@@ -103,10 +110,25 @@ function actualizarJuego() {
     graficarGato();
     graficarComida();
     detectarColision();
-    
+
 }
 
 function restarTiempo() {
     tiempo = tiempo - 1;
     mostrarEnSpan("tiempo", tiempo);
+
+    if (tiempo == 0 && puntaje < 6) {
+        alert("GAME OVER");
+        clearInterval(intervalo);
+    }
+}
+
+function reiniciarJuego() {
+    puntaje = 0;
+    tiempo = 10;
+    mostrarEnSpan("puntos", puntaje);
+    mostrarEnSpan("tiempo", tiempo);
+    clearInterval(intervalo);
+    iniciarJuego();
+    actualizarJuego();
 }
