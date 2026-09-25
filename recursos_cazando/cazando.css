@@ -5,11 +5,8 @@
 body {
   text-align: center;
   font-family: 'Baloo 2', Arial, sans-serif;
-  background:
-    radial-gradient(circle at 15% 15%, rgba(255,255,255,.45) 0 3%, transparent 4%),
-    radial-gradient(circle at 85% 80%, rgba(255,255,255,.25) 0 2%, transparent 3%),
-    linear-gradient(135deg, #182848 0%, #27496d 48%, #159957 100%);
-  background-size: 120px 120px, 160px 160px, auto;
+  background: url("fondo_cazando.jpg") center center / cover no-repeat;
+  background-attachment: fixed;
   min-height: 100vh;
   margin: 0;
   padding: 28px 16px 34px;
