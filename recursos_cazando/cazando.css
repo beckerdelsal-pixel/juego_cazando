@@ -62,11 +62,13 @@ canvas {
   height: auto;
   margin: 0 auto;
   background: #fffdf5;
-  border: 7px solid rgba(255,255,255,.92);
-  border-radius: 26px;
-  box-shadow:
-    0 0 0 3px rgba(20,35,60,.18),
-    0 20px 45px rgba(0,0,0,.30);
+
+  /* El borde ahora queda fuera del área de juego para no tapar la comida */
+  border: 2px solid rgba(255,255,255,.96);
+  border-radius: 12px;
+  outline: 3px solid rgba(20,35,60,.18);
+  outline-offset: 0;
+  box-shadow: 0 16px 36px rgba(0,0,0,.26);
 }
 
 .controles {
