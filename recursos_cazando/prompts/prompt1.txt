@@ -1,0 +1,2 @@
+propmt inicial:
+Actua como diseñador grafico profesional, mejora la calidad e interfaz grafica del juego presentado, ten en cuenta que solo debes modificar la interfaz visual, mas no debes modificar ni cambiar los ids de los componentes. Haz que el juego sea llamativo para todos los usuarios y ten presente la psicologia del color. El juego trata de un gato que debe alcanzar todas sus 6 comidas antes de que se acabe el tiempo asignado (10 segundos)
