@@ -58,7 +58,7 @@ canvas {
   width: min(500px, 94vw);
   height: auto;
   margin: 0 auto;
-  background: #fffdf5;
+  background: #e7e5df;
 
   /* El borde ahora queda fuera del área de juego para no tapar la comida */
   border: 2px solid rgba(255,255,255,.96);

@@ -1,0 +1,5 @@
+Prompt inicial parte 2:
+Ahora, necesito que le coloques una imagen como background, la cual te voy a enviar ahora, no debes mover las ubicaciones de ningun componente de la pagina ni modificar nada mas, solo colocarle el background que te proporciono
+
+prompt modificación 1:
+ahora, necesito que le cambies el color al area de juego, debe ser un color mas neutro pero no debe opacar a ninguno de los objetos que se encuentran dentro de el
