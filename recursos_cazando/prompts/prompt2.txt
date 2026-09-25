@@ -3,3 +3,6 @@ Ahora, necesito que le coloques una imagen como background, la cual te voy a env
 
 prompt modificación 1:
 ahora, necesito que le cambies el color al area de juego, debe ser un color mas neutro pero no debe opacar a ninguno de los objetos que se encuentran dentro de el
+
+prompt modificación final:
+ahora por ultimo, necesito que arriba de Autor: BECKER DEL SALTO, le coloques esta imagen, debes asignarle un tamaño necesario para que no ocupe mucho en la pagina pero a su vez pueda apreciarse de forma correcta, ademas debes colocarle arriba de la imagen un Nickname que debe ser "BECKTORKE", el tipo de letra y fuente debe ser diferente al resto de los escritos
